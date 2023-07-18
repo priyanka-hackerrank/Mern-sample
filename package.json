@@ -1,0 +1,52 @@
+{
+  "name": "mern-sample",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "prestart": "yarn install && bash setup.sh",
+    "pretest": "yarn install && bash setup.sh",
+    "start": "concurrently -r \"nodemon --exec babel-node src/server/app.js\" \"PORT=8000 BROWSER=none react-scripts start\"",
+    "test": "react-scripts test --watchAll=false --env=jsdom --verbose --testResultsProcessor jest-junit",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "5.16.5",
+    "@testing-library/react": "13.4.0",
+    "axios": "1.3.4",
+    "cors": "2.8.5",
+    "express": "4.18.2",
+    "express-async-errors": "3.1.1",
+    "mongodb": "5.1.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "2.1.4"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "7.21.0",
+    "@babel/core": "7.21.3",
+    "@babel/node": "7.20.7",
+    "@babel/preset-env": "7.20.2",
+    "concurrently": "7.6.0",
+    "jest-junit": "15.0.0",
+    "nodemon": "2.0.22"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
